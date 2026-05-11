@@ -1,0 +1,83 @@
+tables:
+  haven_measure_original:
+    description: >
+      A small test dataset.
+    columns:
+      - name: Name
+        type: string
+        label: Participant Name
+        measure: Nominal
+        contents: [Alice, Bob, Cathy]
+      - name: Degree
+        type: string
+        label: Participant Gender
+        measure: Ordinal
+        contents: [Bachelor, PhD, Master]
+      - name: Age
+        type: numeric
+        label: Participant Age
+        measure: Scale
+        contents: [22, 24, 21]
+      - name: ID
+        type: numeric
+        label: Participant ID
+        measure: Nominal
+        contents: [1, 2, 3]
+      - name: Rating
+        type: numeric
+        label: Please rate today's workshop
+        measure: Ordinal
+        contents: [3, 5, 4]
+        value_labels: 
+          1: Very poor
+          2: Poor
+          3: Fair
+          4: Good
+          5: Excellent
+  haven_measure_export:
+    description: >
+      A small test dataset.
+    columns:
+      - name: Name
+        type: string
+        label: Participant Name
+        measure: Nominal
+        contents: [Alice, Bob, Cathy]
+      - name: Degree
+        type: string
+        label: Participant Gender
+        measure: Nominal
+        contents: [Bachelor, PhD, Master]
+      - name: Age
+        type: numeric
+        label: Participant Age
+        measure: Scale
+        contents: [22, 24, 21]
+      - name: ID
+        type: numeric
+        label: Participant ID
+        measure: Scale
+        contents: [1, 2, 3]
+      - name: Rating
+        type: numeric
+        label: Please rate today's workshop
+        measure: Nominal
+        contents: [3, 5, 4]
+        value_labels: 
+          1: Very poor
+          2: Poor
+          3: Fair
+          4: Good
+          5: Excellent
+differences:
+  - column: Degree
+    type: string
+    difference: Ordinal becomes Nominal
+  - column: ID
+    type: numeric
+    difference: Nominal becomes Scale
+  - column: Rating
+    type: numeric
+    difference: Ordinal becomes Nominal
+        
+        
